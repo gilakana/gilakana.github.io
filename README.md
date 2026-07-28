@@ -9,5 +9,5 @@ The vision for the website:
 The font, style, color scheme to be defined here.
 
 # Upload supporting Documents
--Images, artwork etc.
--contact info (ig account, email etc.)
+Images, artwork etc.
+contact info (ig account, email etc.)
