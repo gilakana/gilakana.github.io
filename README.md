@@ -10,7 +10,7 @@ The aim of the website is for it to serve as an introduction to me and how I wor
 At the top of every page I want there to be my signature. 
 At the bottom of everypage there will be a subheading 'connect' in bold and below it regular text 'Instagram' and to the right of that a live link to an instagram account, and below that regular text 'email' with a live link to the gmail address. 
 Instagram account:
-Gmail address: 
+Gmail address: gilakana.art@gmail.com
 On the 'home' page, I want my signature to appear as a horizontal photo across the top, taking up more space than the 'recent works' page. Below this I will have quite big text for a logo/few short phrases to summarise what I do. Below this text, in smaller size text, I will have a short biography. 
 Text for logo/few short phrases:
 Text for biography:
@@ -20,19 +20,19 @@ Artwork 1 () title: year: description:
 
 # Design Choices:
 The font, style, color scheme to be defined here.
-background color for all pages
-partially transparent boxes appearing over photos of artworks when mouse is hovered over them color 
+background color for all pages #010038
+partially transparent boxes appearing over photos of artworks when mouse is hovered over them color #28231e 
 title of work appearing in partially transparent box font style
 description of work appearing in partially transparent box font style
-text color for all text 
-expandable menu as three thin elegan lines in color
+text color for all text #dcdcdc
+expandable menu as three thin elegan lines in color #dcdcdc
 'home' and 'recent works' text in expandable menu font style 
 Home page logo/few short phrases in font style; 
 individual page for artworks 'title, year' in font style ; 'about work' in font style, description of work in font style
 'connect' subheading at the bottom of every page in font style
 'instagram' in font style 
 instagram link in font style
-'email' in font style
+'gilakana.art@gmail.com' in font style
 email link in font style 
 
 
