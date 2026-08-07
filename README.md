@@ -64,9 +64,10 @@ Artwork 5 (two lizards in front of a desert oasis)
 title: Sunflower seeds in the sand
 year: 2026
 description:
-An oasis in the desert, where a single sunflower creates a rain of sunflower seeds shared by two lizards.
+An oasis in the desert, where two lizards share sunflower seeds falling like rain.
 I was inspired by academic articles I was reading on Australian Indigenous beliefs. Specifically, I was struck by stories of the Rainbow Serpent, who is believed by some groups to live in waterholes, forming a rainbow in the sky as it travels between them. 
-As with some of my other works, close attention should be paid to the reflections in the water (or their absence)...
+As with some of my other works, close attention should be paid to the reflections in the water (or their absence) ...
+
 
 # Design Choices:
 The font, style, color scheme to be defined here.
