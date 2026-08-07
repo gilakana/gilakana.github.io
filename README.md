@@ -48,10 +48,10 @@ Artwork 3 (butterfly)
 title: 107 Butterfly Effect
 year: 2026
 description:
-This work was all about the power of manifestation and visualisation.
 The title comes from a moment when after focusing intensely on the number 107, it began appearing around me in unexpected places later that day.
-A similar experience arose after talking about butterflies with my partner in great detail, describing the colors and patterns of their wings. The very next day, I saw the exact same butterfly we had discussed. A few days after completing this piece, I went on a trip and saw the exact same low-hanging cloud shapes I had painted, including the heart shapes nestled between them.
-For me, this painting encompasses the ‘butterfly effect’ perfectly.
+A similar experience arose after talking about butterflies with my partner in detail, describing the colours and patterns of their wings. The very next day, I saw the exact same butterfly we had discussed.
+A few days after completing this piece, I went on a trip and saw the exact same low-hanging clouds I had painted, including the heart shapes nestled between them.
+
 
 
 Artwork 4 (hill with a fallen tree and a lake of lilies)
