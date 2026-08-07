@@ -12,8 +12,9 @@ At the bottom of everypage there will be a subheading 'connect' in bold and belo
 Instagram account: @gila_kana
 Gmail address: gilakana.art@gmail.com
 
-On the 'home' page, I want my signature to appear as a horizontal photo across the top, taking up more space than the 'recent works' page. Below this I will have quite big text for a logo/few short phrases to summarise what I do. Below this text, in smaller size text, I will have a short biography. 
-Text for logo/few short phrases:
+On the 'home' page, I want my signature to appear as a horizontal photo across the top, taking up more space than the 'recent works' page. Below this I will have quite big size text for the first part of the tagline heading and smaller size text for tagline subheading. Below this text, in smaller size text, I will have a short biography. 
+Text for tagline heading:Painting with flowers. 
+Text for tagline subheading: A ritual of remembrance. 
 Text for biography ('painting with flowers' to be in italics.):
 Through my art, I seek to express a deep admiration, love, and appreciation for nature in a world that has become increasingly disconnected from it. Grounded in my undergraduate research on environmental conservation and climate justice, my works reflect nature’s inherent value, constant movement, and organised chaos. My art is a direct challenge to the Anthropocene and Capitalocene, replacing consumption with connection and celebrating humans’ divine union with nature. 
 At the heart of my practice is what I call ‘painting with flowers.’ Flowers often form the very soul of my paintings with their mesmorising beauty, unique textures and bright colours. Having responsibly handpicked, dried, and pressed each one myself, I give them eternal life on the canvas.
@@ -76,13 +77,14 @@ description of work appearing in partially transparent box font style
 text color for all text #dcdcdc
 expandable menu as three thin elegan lines in color #dcdcdc
 'home' and 'recent works' text in expandable menu font style 
-Home page logo/few short phrases in font style; 
+Home page tagline heading in font style; 
+Home page tagline subheading in font style;
+Home page biography in font style;
 individual page for artworks 'title, year' in font style ; 'about work' in font style, description of work in font style
-'connect' subheading at the bottom of every page in font style
-'instagram' in font style 
-instagram link in font style
-'gilakana.art@gmail.com' in font style
-email link in font style 
+'connect' subheading at the bottom of every page in font style;
+'find out more about me and my works in progress by following me on instagram' in font style
+'instagram' link in font style;
+gmail link in font style
 
 
 # Upload supporting Documents
