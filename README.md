@@ -25,7 +25,7 @@ In the 'recent works' page I want my signature to appear as a thinner slither ac
 
 On the page of the individual artwork, for each artwork, there will be the same signature as in 'recent works' across the top of the page, the same photo of the artwork as in 'recent works' on the left hand side but occupying about half of the  horizontal length of the page rather than a third. When a user hovers their mouse over the artwork, the image will become enlarged, enabling the user to see the details of the photo. When the user clicks on the photo, it takes the full screen size, enabling the user to zoom in by hovering the cursor over the photo (similar to how photos of products on Amazon can be zoomed in on). To the right, there will be the heading 'about this work' and below the heading there will be the full description of the work (a part of which was already visable to the user when the mouse hovered on a photo in the 'recent works' page). Below the photo on the left hand side will be text in the same size as the description of the artwork which will be the title of the work (the same as in 'recent works' page) followed by a comma and the year the artwork was produced in (all in italics). 
 
-Artwork 1 (dark blue borders with two golden figures and a river) 
+Artwork 1 
 title: Divine Couple: Conception - a place where dreams are born 
 year: 2023 
 description:
@@ -34,7 +34,7 @@ The first in a series of paintings inspired by Greek signet rings and my first p
  In the background on the left lies an ancient burial mound of Ukrainian steppes and on the right stands the Chimborazo mountain of Ecuador. A river and sunflowers push the two worlds together, uniting their dreams. 
 Set at dawn, yet shining with bright colours, I like to think of it as an evening painting.
 
-Artwork 2 (lilac borders with two golden figures before a sea) 
+Artwork 2 
 title: Divine Couple: Crossing- the path unfolds
 year: 2026
 description:
@@ -44,7 +44,7 @@ The woman initially seemed reluctant to go. But upon testing the arrangement of 
 I like to think of it as a daytime painting.
 
 
-Artwork 3 (butterfly)
+Artwork 3
 title: 107 Butterfly Effect
 year: 2026
 description:
@@ -54,13 +54,13 @@ A few days after completing this piece, I went on a trip and saw the exact same 
 
 
 
-Artwork 4 (hill with a fallen tree and a lake of lilies)
+Artwork 4
 title: El Encuentro
 year: 2026
 description: 
 "El Encuentro" is a mind game. It is a painting that appears chaotic at first glance, but gains its order upon close inspection. The story unfolds depending on how you classify elements of the painting: do they exist in the physical, spiritual, or both realms? The clues to this lie in the water reflections (or their absence).
 
-Artwork 5 (two lizards in front of a desert oasis)
+Artwork 5 
 title: Sunflower seeds in the sand
 year: 2026
 description:
