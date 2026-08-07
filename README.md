@@ -29,43 +29,43 @@ Artwork 1 (dark blue borders with two golden figures and a river)
 title: Divine Couple: Conception - a place where dreams are born 
 year: 2023 
 description:
-The woman holds a lilypad in her hands while the man declares his love for her - is he singing or comparing her beauty to that of the sky? 
-The first in a series of paintings inspired by Greek signet rings and my first painting to experiment with dried flowers. This painting is where my art style originates from, featuring gold elements, nature, and pressed flowers. It holds a very special place in my heart as it was the first of many paintings I created for my partner.
-The ring which served as inspiration for this piece is called ‘Divine Couple Ring’ which I saw in the Ashmolean museum and instantly fell in love with. The scene seemed simple enough, and yet contained a lot of elements which were difficult to interpret due to the nature of the engravings on a ring lacking detail. Instead, I focused on the symbolism behind the composition, keeping the main elements that I was inspired by in gold which provided a unique, eye-catching contrast. 
-Bluebells represent the crocuses while individual flower petals make up the sunflower petals are. In the background on the left lies an ancient burial mound of Ukrainian steppes and on the right stands the Chimborazo mountain of Ecuador. A river and sunflowers push the two worlds together, uniting their dreams. 
+The woman holds a lily in her hands while the man declares his love for her - is he singing or comparing her beauty to that of the sky? 
+The first in a series of paintings inspired by Greek signet rings and my first painting to experiment with dried flowers. The ‘Divine Couple Ring’ served as inspiration for this piece. 
+ In the background on the left lies an ancient burial mound of Ukrainian steppes and on the right stands the Chimborazo mountain of Ecuador. A river and sunflowers push the two worlds together, uniting their dreams. 
+Set at dawn, yet shining with bright colours, I like to think of it as an evening painting.
 
 Artwork 2 (lilac borders with two golden figures before a sea) 
 title: Divine Couple: Crossing- the path unfolds
 year: 2026
 description:
-This is the second painting inspired by Greek signet rings. Once again featuring the divine couple, they are shown at the point of crossing the river in a boat.
-The boat and fish are made of multiple individual flower petals, and the bouquet in the woman’s hands are made of many different flowers. Gold paint was used for the dominant elements of the original ring, built up almost like clay to create a three-dimensional effect. A strawberry acts as the moon, inspired by my dream and continuing the motif of depicting both the sun and moon in my paintings.
-I was stuck on this painting for a long time. Having started it in 2024, I only dared to pick it back up in 2026. I remember becoming very frustrated with my lack of progress and inspiration, and I was certain I had thrown the work away in the summer of 2025. Fortunately, I found it and pushed through the uncertainty.
-I could finally understand what was bothering me: the woman figure seemed reluctant to go, hiding in the corner of the painting. But upon testing the arrangement of flowers on the canvas, I saw that she was actually intrigued by the bouquet, looking down at it fully. This was the turning point in the process that enabled me to finish the work and why I can confidently say that flowers are the soul of my paintings.
+This is the second painting inspired by Greek signet rings. Once again featuring the Divine Couple, they are shown at the point of crossing the river in a boat.
+The boat and fish are made of multiple individual flower petals, and the bouquet in the woman’s hands is made of many different flowers. Gold paint was used for the dominant elements of the original ring.  A strawberry acts as the moon, inspired by my dream.
+The woman initially seemed reluctant to go. But upon testing the arrangement of flowers on the canvas, I saw that she was instead intrigued by the bouquet, looking down at it fully. 
+I like to think of it as a daytime painting.
+
 
 Artwork 3 (butterfly)
 title: 107 Butterfly Effect
 year: 2026
 description:
-This work was all about the power of manifestation and visualisation - how thinking enough about one thing could bring it into your life. 
+This work was all about the power of manifestation and visualisation.
 The title comes from a moment when after focusing intensely on the number 107, it began appearing around me in unexpected places later that day.
-A similar experience arose after talking about butterflies with my partner in great detail, describing the colors and patterns of their wings. The very next day, I saw the exact same butterfly we had discussed, and it was the first butterfly of the year. The butterfly and the recurrence of the number 107 inspired me to create this painting. A few days after completing this piece, I went on a trip and saw the exact same low-hanging cloud shapes I had painted, including the heart shapes nestled between them.
-For me, this painting encompasses the ‘butterfly effect’ perfectly -  small thoughts and images from our mind materialising in the physical world.
+A similar experience arose after talking about butterflies with my partner in great detail, describing the colors and patterns of their wings. The very next day, I saw the exact same butterfly we had discussed. A few days after completing this piece, I went on a trip and saw the exact same low-hanging cloud shapes I had painted, including the heart shapes nestled between them.
+For me, this painting encompasses the ‘butterfly effect’ perfectly.
+
 
 Artwork 4 (hill with a fallen tree and a lake of lilies)
 title: El Encuentro
 year: 2026
 description: 
-"El Encuentro" is a mind game. I wanted to show connections we often overlook, such as between night and day, and between life, death, and rebirth. I wanted to illustrate a fictional story created by my partner. I created something that appears chaotic at first glance but gains its order upon close inspection. The story unfolds depending on how the viewer classifies elements of the painting: do they exist in the physical, spiritual, or both realms? The clues to this lie in the water reflections (or their absence).
-In this piece, I gave pressed flowers even more voice and autonomy by building the composition around the unique forms and shapes in which they dried. The lilies on the pond, the tree branches, the night moth, and the sapling are all created using pressed flowers.
-I was also researching concepts of stewardship and guardianship at the time, which led me to place frogs at the center of the canvas, entrusting them with that protective role.
+"El Encuentro" is a mind game. It is a painting that appears chaotic at first glance, but gains its order upon close inspection. The story unfolds depending on how you classify elements of the painting: do they exist in the physical, spiritual, or both realms? The clues to this lie in the water reflections (or their absence).
 
 Artwork 5 (two lizards in front of a desert oasis)
 title: Sunflower seeds in the sand
 year: 2026
 description:
-An oasis in the desert, where a single sunflower creates a rain of sunflower seeds shared by two lizards. I have long been drawn to desert landscapes, having cared for many cacti throughout my life.
-This painting was also inspired by academic articles I was reading on Australian Indigenous beliefs. Specifically, I was struck by stories of the Rainbow Serpent, who is believed by some groups to live in waterholes, forming a rainbow in the sky as it travels between them. When visiting a museum in Edinburgh, I was fascinated by a drawing which I did not at the time realise to be of the rainbow serpent.  
+An oasis in the desert, where a single sunflower creates a rain of sunflower seeds shared by two lizards.
+I was inspired by academic articles I was reading on Australian Indigenous beliefs. Specifically, I was struck by stories of the Rainbow Serpent, who is believed by some groups to live in waterholes, forming a rainbow in the sky as it travels between them. 
 As with some of my other works, close attention should be paid to the reflections in the water (or their absence)...
 
 # Design Choices:
