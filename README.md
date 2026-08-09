@@ -29,7 +29,7 @@ On the page of the individual artwork, for each artwork, there will be the same 
 Artwork 1 
 title: Divine Couple: Conception - a place where dreams are born 
 year: 2023 
-dimensions: 18cm x 13cm x1.5cm
+dimensions: 18cm x 13cm x 1.5cm
 medium: mixed media
 description:
 The woman holds a lily in her hands while the man declares his love for her - is he singing or comparing her beauty to that of the sky? 
@@ -52,7 +52,7 @@ I like to think of it as a daytime painting.
 Artwork 3
 title: 107 Butterfly Effect
 year: 2026
-dimensions: 23cm x 21cm x 0.5cm 
+dimensions: 23cm x 21cm x 0.3cm 
 medium: acrylic on canvas
 description:
 The title comes from a moment when after focusing intensely on the number 107, it began appearing around me in unexpected places later that day.
@@ -64,7 +64,7 @@ A few days after completing this piece, I went on a trip and saw the exact same 
 Artwork 4
 title: El Encuentro
 year: 2026
-dimensions: 13cm x18cm x 0.3cm
+dimensions: 13cm x 18cm x 0.3cm
 medium: mixed media
 description: 
 "El Encuentro" is a mind game. It is a painting that appears chaotic at first glance, but gains its order upon close inspection. The story unfolds depending on how you classify elements of the painting: do they exist in the physical, spiritual, or both realms? The clues to this lie in the water reflections (or their absence).
