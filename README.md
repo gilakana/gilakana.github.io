@@ -8,9 +8,10 @@ I want to build a website which acts as a professional portfolio for my artworks
 I want there to be a menu in the top left corner that the user can expand with the following categories: 'home' and 'recent works'.
 The aim of the website is for it to serve as an introduction to me and how I work. 
 At the top of every page I want there to be my signature. 
-At the bottom of everypage there will be a subheading 'connect' in bold and below it regular text: find out more about me and my works in progress by following me on instagram. Below this there will be in regular text 'Instagram' and to the right of that a live link to an instagram account, and below that regular text 'email' with a live link to the gmail address. 
+At the bottom of everypage there will be a subheading 'CONNECT' and below it : 'find out more about me and my works in progress by following me on Instagram.' Below this there will be in regular text 'INSTAGRAM' and to the right of that a live link to an instagram account, and below that regular text 'EMAIL' with a live link to the gmail address. 
 Instagram account: @gila_kana
 Gmail address: gilakana.art@gmail.com
+I will have an expandable menu. once the menu icon is clicked, a partially-transparent box will appear taking up 1/4 of the screen horizontally and the whole screen vertically which will be the menu, with text 'Home' and 'Recent works' acting as links to take user to separate pages.
 
 On the 'home' page, I want my signature to appear as a horizontal photo across the top, taking up more space than the 'recent works' page. Below this I will have quite big size text for the first part of the tagline heading and smaller size text for tagline subheading. Below this text, in smaller size text, I will have a short biography. 
 Text for tagline heading:Painting with flowers. 
@@ -71,21 +72,29 @@ As with some of my other works, close attention should be paid to the reflection
 
 # Design Choices:
 The font, style, color scheme to be defined here.
+
 background color for all pages #010038
-partially transparent boxes appearing over photos of artworks when mouse is hovered over them color #28231e 
-title of work appearing in partially transparent box font style
-description of work appearing in partially transparent box font style
 text color for all text #dcdcdc
+
+Recent works page partially transparent boxes appearing over photos of artworks when mouse is hovered over them color #28231e transparency 65%
+'Recent works' heading on recent works page in 	DM Sans Thin 100 size 27 
+title of work text below photo in recent works page DM Sans Regular 400 size 18 
+'About this work' subheading and description of work following a line break appearing in partially transparent box in recent works page in DM Sans Regular 400 size 18
+
 expandable menu as three thin elegan lines in color #dcdcdc
-'home' and 'recent works' text in expandable menu font style 
-Home page tagline heading in font style; 
-Home page tagline subheading in font style;
-Home page biography in font style;
-individual page for artworks 'title, year' in font style ; 'about work' in font style, description of work in font style
-'connect' subheading at the bottom of every page in font style;
-'find out more about me and my works in progress by following me on instagram' in font style
-'instagram' link in font style;
-gmail link in font style
+'Home' and 'Recent works' text in expandable menu DM Sans Regular 400 size 18 
+vertical box appearing from top of the page until the end of the page on every page upon clicking the menu icon in colour #28231e transparency 85%
+
+Home page 'Painting with flowers' heading in Playfair Display regular 400 size 67 
+Home page 'A ritual of remembrance' subheading in Playfair Display regular 400 size 37 
+Home page biography body text in DM Sans Regular 400 size 18 
+
+individual page for artworks title in DM Sans Thin 100 size 27 
+'year:' and 'dimensions:' in DM Sans Bold 700 size 14 ; main body text for year and dimensions in DM Sans Regular 400 size 14; main body text for descriptions of works in DM Sans Regular 400 size 18 
+
+'CONNECT' subheading at the bottom of every page in DM Sans Thin 100 size 27 
+'find out more about me and my works in progress by following me on Instagram' in DM Sans Regular 400 size 14
+'INSTAGRAM' link in DM Sans Regular 400 size 14;'EMAIL' link in DM Sans Regular 400 size 14. Both to be side by side below 'CONNECT'.
 
 
 # Upload supporting Documents
