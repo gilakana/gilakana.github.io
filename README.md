@@ -75,7 +75,14 @@ medium: mixed media
 description: 
 'El Encuentro' is a mind game. It is a painting that appears chaotic at first glance, but gains its order upon close inspection. The story unfolds depending on how you classify elements of the painting: do they exist in the physical, spiritual, or both realms? The answer lies in the water reflections (or their absence).
 
+Each page of the website should have its own appropriate browser/page title. These titles appear in the browser tab and should not appear as visible text within the website itself.
+Use the following titles:
+Home: Gila Kana | Artist Statement
+Recent Works: Recent Works | Gila Kana
+Individual artwork pages: [Artwork Title] | Gila Kana
+The browser/page title should update according to the page the user is viewing. Titles should remain concise, professional, and clearly indicate which page the visitor is viewing.
 
+Favicon: to be determined.
 
 # Design Choices:
 
