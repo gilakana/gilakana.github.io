@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>107 Butterfly Effect | Gila Kana</title>
+    <meta name="description" content="107 Butterfly Effect by Gila Kana.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;400&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="site-menu-overlay" data-menu-overlay hidden>
+      <nav class="site-menu" id="site-menu" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="recent-works.html">Recent works</a>
+      </nav>
+    </div>
+
+    <header class="signature-banner signature-banner--compact">
+      <img src="assets/images/signature.png" alt="Gila Kana signature">
+    </header>
+
+    <main>
+      <article class="artwork-detail">
+        <h1>107 Butterfly Effect</h1>
+        <div class="artwork-layout">
+          <div class="artwork-image-column">
+            <button class="artwork-lightbox-trigger" type="button" data-lightbox-trigger data-full-src="assets/images/107-butterfly-effect.jpg" aria-label="Open 107 Butterfly Effect in full-screen view">
+              <img src="assets/images/107-butterfly-effect.jpg" alt="107 Butterfly Effect">
+            </button>
+            <dl class="artwork-meta">
+              <div><dt>Year</dt><dd>2026</dd></div>
+              <div><dt>Dimensions</dt><dd>23cm x 21cm x 0.3cm</dd></div>
+              <div><dt>Medium</dt><dd>acrylic on canvas</dd></div>
+            </dl>
+          </div>
+          <div class="artwork-copy">
+            <h2>About this work</h2>
+            <p>This piece explores moments of manifestation. The title comes from a moment when, after focusing intensely on the number 107, it began appearing around me in unexpected places later that day.</p>
+            <p>A similar experience arose after talking about butterflies with my partner in detail, describing the colours and patterns of their wings. The very next day, I saw the exact same butterfly we had discussed.</p>
+            <p>A few days after completing this piece, I went on a trip and saw the exact same low-hanging clouds I had painted, including the heart shapes nestled between them.</p>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <h2>CONNECT</h2>
+        <p>Find out more about me and my works in progress by following me on Instagram.</p>
+        <div class="footer-links">
+          <a href="https://www.instagram.com/gila_kana/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+          <a href="mailto:gilakana.art@gmail.com">EMAIL</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="lightbox" data-lightbox hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Artwork image viewer">
+      <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close full-screen view">&times;</button>
+      <div class="lightbox-stage" data-lightbox-stage>
+        <img src="" alt="" data-lightbox-image>
+      </div>
+      <div class="lightbox-controls" aria-label="Image zoom controls">
+        <button type="button" data-zoom-out aria-label="Zoom out">-</button>
+        <button type="button" data-zoom-reset aria-label="Reset zoom">1:1</button>
+        <button type="button" data-zoom-in aria-label="Zoom in">+</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
