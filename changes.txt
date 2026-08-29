@@ -1,7 +1,3 @@
-test
-this is a test message
-another test
-
 Menu navigation: 
 change menu to a navigation bar. Add a thin horizontal navigation bar at the very top of the page in the same colour as the website background (#010038). The bar should be compact and should not be excessively tall, with its height determined by the size of the navigation text and comfortable vertical spacing around it.  The labels of the tool bar should be positioned on the right
 The tool bar should have the links ‘About’ and ‘Recent Works’.The link corresponding to the page the user is currently viewing should be visually distinguished from the other navigation link. The distinction should be subtle and consistent with the website's colour palette. The two navigation links should have comfortable spacing between them and should be positioned towards the right side of the navigation bar. 
