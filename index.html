@@ -12,27 +12,17 @@
   </head>
   <body>
     <nav class="top-nav" aria-label="Primary navigation">
-      <a href="about.html" class="top-nav-link">About</a>
-      <a href="index.html" class="top-nav-link is-active" aria-current="page">Recent Works</a>
+      <a href="index.html" class="brand-mark" aria-label="Go to home page">
+        <img src="assets/images/signature.png" alt="Gila Kana signature" class="brand-signature">
+      </a>
+      <div class="nav-links">
+        <a href="about.html" class="top-nav-link">About</a>
+        <a href="index.html" class="top-nav-link is-active" aria-current="page">Recent Works</a>
+      </div>
     </nav>
 
-    <header class="signature-banner signature-banner--compact">
-      <img src="assets/images/signature.png" alt="Gila Kana signature" class="signature-img-left">
-      <div class="sort-controls" data-sort-controls>
-        <button class="sort-trigger" type="button" aria-expanded="false" aria-haspopup="true" data-sort-trigger>Sort by <span class="sort-arrow" aria-hidden="true">&#9662;</span></button>
-        <div class="sort-dropdown" data-sort-dropdown hidden>
-          <div class="sort-group">
-            <span class="sort-group-label">Order</span>
-            <button class="sort-option" type="button" data-sort="newest">Newest to oldest</button>
-            <button class="sort-option" type="button" data-sort="oldest">Oldest to newest</button>
-          </div>
-          <div class="sort-group">
-            <span class="sort-group-label">Collections</span>
-            <button class="sort-option" type="button" data-collection="divine-couple">Divine Couple</button>
-            <button class="sort-option" type="button" data-collection="all">All works</button>
-          </div>
-        </div>
-      </div>
+    <header class="signature-banner signature-banner--compact" aria-hidden="true">
+      <span class="brand-placeholder"></span>
     </header>
 
     <main>

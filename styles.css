@@ -74,23 +74,47 @@ button {
   right: 0;
   z-index: 50;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: space-between;
   gap: 24px;
   padding: 14px var(--side-gutter);
-  background: rgba(12, 15, 24, 0.74);
+  background: rgba(247, 242, 235, 0.96);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 12px 28px rgba(7, 10, 20, 0.16);
+  border-bottom: 1px solid rgba(18, 18, 18, 0.08);
+  box-shadow: 0 12px 24px rgba(12, 11, 10, 0.06);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 26px;
+  margin-left: auto;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  height: 46px;
+  text-decoration: none;
+}
+
+.brand-signature {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0.12) saturate(0.8);
 }
 
 .top-nav-link {
   position: relative;
-  color: var(--text);
+  color: #171512;
   font-family: "DM Sans", Arial, sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   text-decoration: none;
   letter-spacing: 0.02em;
   transition: opacity 180ms ease, transform 180ms ease;
@@ -136,17 +160,18 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 18px var(--side-gutter);
-  background: linear-gradient(135deg, #f7f2eb, #efe8df);
-  border-bottom: 1px solid rgba(19, 17, 15, 0.08);
-  box-shadow: 0 18px 38px rgba(16, 12, 12, 0.08);
+  justify-content: center;
+  padding: 12px var(--side-gutter);
+  background: rgba(247, 242, 235, 0.96);
+  border-bottom: 1px solid rgba(18, 18, 18, 0.06);
+  box-shadow: 0 8px 18px rgba(12, 11, 10, 0.04);
 }
 
 .signature-banner::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top right, rgba(201, 168, 128, 0.2), transparent 35%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0));
   pointer-events: none;
 }
 
@@ -158,11 +183,11 @@ body {
 }
 
 .signature-banner--home {
-  min-height: 18vh;
+  min-height: 10vh;
   justify-content: center;
   overflow: hidden;
   transition: min-height 220ms ease-out;
-  background: linear-gradient(135deg, #f7f2eb, #f0e7df);
+  background: rgba(247, 242, 235, 0.96);
 }
 
 .signature-banner--home .sig-inner {
@@ -171,29 +196,36 @@ body {
   align-items: center;
   justify-content: center;
   width: min(620px, 72vw);
-  min-height: 120px;
-  padding: 18px 26px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.35);
-  border: 1px solid rgba(24, 20, 19, 0.07);
+  min-height: 62px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(24, 20, 19, 0.06);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  will-change: transform, opacity;
-  animation: gentleFloat 6s ease-in-out infinite alternate;
 }
 
 .signature-banner--home img {
-  max-height: 13vh;
+  max-height: 8vh;
   width: auto;
   object-fit: contain;
   filter: brightness(0.12) saturate(0.8);
 }
 
 .signature-banner--compact {
-  min-height: 12.5vh;
+  min-height: 12px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .signature-banner--compact img:not(.signature-img-left) {
   max-height: 9.8vh;
+}
+
+.brand-placeholder {
+  display: block;
+  width: 100%;
+  height: 1px;
+  opacity: 0;
 }
 
 .sort-controls {
@@ -346,6 +378,145 @@ main {
 
 .artist-statement p:last-child {
   margin-bottom: 0;
+}
+
+.about-page {
+  width: min(1100px, calc(100% - (var(--side-gutter) * 2)));
+  margin: 0 auto;
+  padding: clamp(42px, 6vw, 86px) 0 16px;
+}
+
+.about-hero {
+  text-align: center;
+  padding: clamp(12px, 2vw, 20px) 0 clamp(26px, 4vw, 42px);
+}
+
+.about-kicker {
+  margin: 0 0 14px;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245, 239, 232, 0.7);
+}
+
+.about-hero h1 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(42px, 7vw, 72px);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  color: #f5efe8;
+}
+
+.about-subtitle {
+  margin: 16px 0 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(26px, 3.8vw, 38px);
+  line-height: 1.2;
+  color: rgba(245, 239, 232, 0.78);
+}
+
+.about-content {
+  margin-top: clamp(12px, 3vw, 24px);
+}
+
+.about-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(220px, 0.8fr);
+  gap: clamp(22px, 4vw, 46px);
+  align-items: start;
+}
+
+.about-card,
+.about-aside {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(4, 6, 14, 0.14);
+}
+
+.about-card {
+  padding: clamp(20px, 3vw, 34px);
+}
+
+.about-card p {
+  margin: 0 0 22px;
+  font-size: clamp(17px, 1.9vw, 20px);
+  line-height: 1.85;
+  color: rgba(245, 239, 232, 0.92);
+}
+
+.about-card p:last-child {
+  margin-bottom: 0;
+}
+
+.about-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px 18px 14px;
+}
+
+.about-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.about-meta:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.about-meta span {
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245, 239, 232, 0.62);
+}
+
+.about-meta strong {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(245, 239, 232, 0.95);
+}
+
+@media (max-width: 900px) {
+  .about-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .about-page {
+    width: min(100%, calc(100% - 24px));
+    padding-top: 30px;
+  }
+
+  .about-card,
+  .about-aside {
+    border-radius: 18px;
+  }
+
+  .about-card {
+    padding: 18px 16px;
+  }
+
+  .about-card p {
+    font-size: 17px;
+  }
+
+  .about-aside {
+    padding: 14px 16px;
+  }
 }
 
 .recent-works {
@@ -882,20 +1053,41 @@ main {
 }
 
 @media (max-width: 620px) {
+  .top-nav {
+    padding: 12px 18px;
+  }
+
+  .brand-mark {
+    min-width: 100px;
+    height: 34px;
+  }
+
+  .brand-signature {
+    height: 22px;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .top-nav-link {
+    font-size: 14px;
+  }
+
   .signature-banner--home {
-    min-height: 12vh;
-    padding: 12px 16px;
+    min-height: 8vh;
+    padding: 10px 16px;
   }
 
   .signature-banner--home .sig-inner {
     width: min(100%, 420px);
-    min-height: 76px;
-    padding: 12px 16px;
-    border-radius: 12px;
+    min-height: 56px;
+    padding: 8px 14px;
+    border-radius: 10px;
   }
 
   .signature-banner--home img {
-    max-height: 9vh;
+    max-height: 7vh;
   }
 
   .home-intro {
@@ -909,11 +1101,7 @@ main {
   }
 
   .signature-banner--compact {
-    min-height: 80px;
-  }
-
-  .signature-banner--compact .signature-img-left {
-    height: 60px;
+    min-height: 12px;
   }
 
   .works-grid {

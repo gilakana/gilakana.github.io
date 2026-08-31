@@ -172,22 +172,10 @@
     const sigImg = signatureBanner.querySelector("img");
 
     function updateHeader() {
-      const viewportH = window.innerHeight;
-      const scrollProgress = Math.min(1, window.scrollY / Math.max(180, viewportH * 0.45));
-      const baseMinHeight = window.innerWidth <= 620 ? 74 : 120;
-      const maxMinHeight = window.innerWidth <= 620 ? 120 : 180;
-      const nextMinHeight = Math.max(baseMinHeight, maxMinHeight - scrollProgress * (maxMinHeight - baseMinHeight));
-
-      signatureBanner.style.minHeight = `${nextMinHeight}px`;
-
-      if (sigInner) {
-        sigInner.style.transform = `translateY(${scrollProgress * 6}px)`;
-      }
-
-      if (sigImg) {
-        const targetHeight = window.innerWidth <= 620 ? 54 : 90;
-        sigImg.style.maxHeight = `${Math.max(targetHeight, 120 - scrollProgress * 36)}px`;
-      }
+      if (!sigInner || !sigImg) return;
+      const offset = Math.min(1, window.scrollY / 160);
+      sigInner.style.transform = `translateY(${offset * 6}px)`;
+      sigImg.style.maxHeight = `${Math.max(42, 78 - offset * 26)}px`;
     }
 
     updateHeader();
