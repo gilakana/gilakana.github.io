@@ -144,6 +144,38 @@
     }, { passive: true });
   }
 
+  const homeIntro = document.querySelector(".home-intro");
+  if (homeIntro) {
+    const fadeTargets = homeIntro.querySelectorAll("h1, .home-subheading, .artist-statement p");
+    fadeTargets.forEach((el) => el.classList.add("fade-up"));
+
+    function revealOnScroll() {
+      const viewportBottom = window.innerHeight;
+      fadeTargets.forEach((el) => {
+        if (el.classList.contains("is-visible")) return;
+        const rect = el.getBoundingClientRect();
+        if (rect.top < viewportBottom * 0.92) {
+          el.classList.add("is-visible");
+        }
+      });
+    }
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: "0px 0px -5% 0px" });
+      fadeTargets.forEach((el) => observer.observe(el));
+    } else {
+      revealOnScroll();
+      window.addEventListener("scroll", revealOnScroll, { passive: true });
+    }
+  }
+
   const carouselTrack = document.querySelector("[data-carousel-track]");
   if (carouselTrack) {
     const artworks = [
