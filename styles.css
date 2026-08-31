@@ -101,23 +101,24 @@ body {
 }
 
 .signature-banner--home {
-  min-height: 50vh;
+  min-height: 40vh;
   justify-content: center;
-  transition: min-height 350ms ease, padding 350ms ease;
+  overflow: hidden;
+  transition: min-height 200ms linear;
 }
 
-.signature-banner--home.is-compact {
-  min-height: 12.5vh;
-  justify-content: flex-start;
-}
-
-.signature-banner--home.is-compact img {
-  max-height: 9.8vh;
+.signature-banner--home .sig-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  will-change: transform, opacity;
 }
 
 .signature-banner--home img {
-  max-height: 42vh;
-  transition: max-height 350ms ease;
+  max-height: 32vh;
+  width: auto;
+  object-fit: contain;
 }
 
 .signature-banner--compact {
@@ -662,7 +663,7 @@ main {
   }
 
   .signature-banner--home img {
-    max-height: 34vh;
+    max-height: 24vh;
   }
 
   .signature-banner--compact {

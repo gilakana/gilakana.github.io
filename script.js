@@ -133,15 +133,32 @@
 
   const signatureBanner = document.getElementById("signature-banner");
   if (signatureBanner && signatureBanner.classList.contains("signature-banner--home")) {
-    const isHome = true;
-    window.addEventListener("scroll", () => {
-      if (!isHome) return;
-      if (window.scrollY > signatureBanner.offsetTop) {
-        signatureBanner.classList.add("is-compact");
-      } else {
-        signatureBanner.classList.remove("is-compact");
-      }
-    }, { passive: true });
+    const sigInner = signatureBanner.querySelector(".sig-inner");
+    const sigImg = signatureBanner.querySelector("img");
+
+    function updateSignature() {
+      const isMobile = window.innerWidth <= 620;
+      const viewportH = window.innerHeight;
+      const startPct = isMobile ? 100 : 40;
+      const endPct = isMobile ? 80 : 12.5;
+      const travel = viewportH * (isMobile ? 0.5 : 0.6);
+      const progress = Math.min(1, Math.max(0, window.scrollY / travel));
+
+      const h = startPct + (endPct - startPct) * progress;
+      const bannerH = h / 100 * viewportH;
+      signatureBanner.style.minHeight = bannerH + "px";
+
+      if (!sigInner || !sigImg) return;
+      const travelY = -14 * progress;
+      sigImg.style.maxHeight = (bannerH * 0.78) + "px";
+      sigInner.style.transform = "translateY(" + travelY + "%)";
+      sigInner.style.justifyContent = progress >= 0.5 ? "flex-start" : "center";
+      sigInner.style.opacity = String(1);
+    }
+
+    updateSignature();
+    window.addEventListener("scroll", updateSignature, { passive: true });
+    window.addEventListener("resize", updateSignature);
   }
 
   const homeIntro = document.querySelector(".home-intro");
