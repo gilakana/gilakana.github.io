@@ -7,33 +7,40 @@
     <meta name="description" content="Recent works by Gila Kana.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;400&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;400;700&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <div class="site-menu-overlay" data-menu-overlay hidden>
-      <nav class="site-menu" id="site-menu" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="recent-works.html">Recent works</a>
-      </nav>
-    </div>
+    <nav class="top-nav" aria-label="Primary navigation">
+      <a href="about.html" class="top-nav-link">About</a>
+      <a href="index.html" class="top-nav-link is-active" aria-current="page">Recent Works</a>
+    </nav>
 
     <header class="signature-banner signature-banner--compact">
-      <img src="assets/images/signature.png" alt="Gila Kana signature">
+      <img src="assets/images/signature.png" alt="Gila Kana signature" class="signature-img-left">
+      <div class="sort-controls" data-sort-controls>
+        <button class="sort-trigger" type="button" aria-expanded="false" aria-haspopup="true" data-sort-trigger>Sort by <span class="sort-arrow" aria-hidden="true">&#9662;</span></button>
+        <div class="sort-dropdown" data-sort-dropdown hidden>
+          <div class="sort-group">
+            <span class="sort-group-label">Order</span>
+            <button class="sort-option" type="button" data-sort="newest">Newest to oldest</button>
+            <button class="sort-option" type="button" data-sort="oldest">Oldest to newest</button>
+          </div>
+          <div class="sort-group">
+            <span class="sort-group-label">Collections</span>
+            <button class="sort-option" type="button" data-collection="divine-couple">Divine Couple</button>
+            <button class="sort-option" type="button" data-collection="all">All works</button>
+          </div>
+        </div>
+      </div>
     </header>
 
     <main>
       <section class="recent-works" aria-labelledby="recent-heading">
         <h1 id="recent-heading">Recent works</h1>
 
-        <div class="works-grid">
-          <article class="work-card" data-overlay-card>
+        <div class="works-grid" data-works-grid>
+          <article class="work-card" data-overlay-card data-order="1" data-collections="divine-couple">
             <div class="work-media" tabindex="0" aria-label="Show details for Divine Couple: Conception - A Place Where Dreams Are Born">
               <img src="assets/images/divine-couple-conception-thumb.jpg" alt="Divine Couple: Conception - A Place Where Dreams Are Born">
               <div class="work-overlay">
@@ -45,7 +52,7 @@
             <h2>Divine Couple: Conception - A Place Where Dreams Are Born</h2>
           </article>
 
-          <article class="work-card" data-overlay-card>
+          <article class="work-card" data-overlay-card data-order="2" data-collections="divine-couple">
             <div class="work-media" tabindex="0" aria-label="Show details for Divine Couple: Crossing - The Path Unfolds">
               <img src="assets/images/divine-couple-crossing-thumb.jpg" alt="Divine Couple: Crossing - The Path Unfolds">
               <div class="work-overlay">
@@ -57,7 +64,7 @@
             <h2>Divine Couple: Crossing - The Path Unfolds</h2>
           </article>
 
-          <article class="work-card" data-overlay-card>
+          <article class="work-card" data-overlay-card data-order="3">
             <div class="work-media" tabindex="0" aria-label="Show details for 107 Butterfly Effect">
               <img src="assets/images/107-butterfly-effect-thumb.jpg" alt="107 Butterfly Effect">
               <div class="work-overlay">
@@ -69,7 +76,7 @@
             <h2>107 Butterfly Effect</h2>
           </article>
 
-          <article class="work-card" data-overlay-card>
+          <article class="work-card" data-overlay-card data-order="4">
             <div class="work-media" tabindex="0" aria-label="Show details for El Encuentro">
               <img src="assets/images/el-encuentro-thumb.jpg" alt="El Encuentro">
               <div class="work-overlay">

@@ -1,54 +1,5 @@
 (function () {
   const body = document.body;
-  const menuToggle = document.querySelector("[data-menu-toggle]");
-  const menuOverlay = document.querySelector("[data-menu-overlay]");
-
-  function openMenu() {
-    if (!menuOverlay || !menuToggle) return;
-    menuOverlay.hidden = false;
-    requestAnimationFrame(() => {
-      menuOverlay.classList.add("is-open");
-      body.classList.add("menu-open");
-      menuToggle.setAttribute("aria-expanded", "true");
-      menuToggle.setAttribute("aria-label", "Close navigation menu");
-    });
-  }
-
-  function closeMenu() {
-    if (!menuOverlay || !menuToggle) return;
-    menuOverlay.classList.remove("is-open");
-    body.classList.remove("menu-open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Open navigation menu");
-    window.setTimeout(() => {
-      if (!menuOverlay.classList.contains("is-open")) {
-        menuOverlay.hidden = true;
-      }
-    }, 280);
-  }
-
-  if (menuToggle && menuOverlay) {
-    menuToggle.addEventListener("click", () => {
-      if (menuOverlay.classList.contains("is-open")) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    });
-
-    menuOverlay.addEventListener("click", (event) => {
-      if (event.target === menuOverlay || event.target.closest("a")) {
-        closeMenu();
-      }
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        closeMenu();
-        closeLightbox();
-      }
-    });
-  }
 
   document.querySelectorAll("[data-overlay-card]").forEach((card) => {
     const media = card.querySelector(".work-media");
@@ -77,6 +28,183 @@
       });
     }
   });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeLightbox();
+  });
+
+  const sortTrigger = document.querySelector("[data-sort-trigger]");
+  const sortDropdown = document.querySelector("[data-sort-dropdown]");
+  const sortControls = document.querySelector("[data-sort-controls]");
+  const worksGrid = document.querySelector("[data-works-grid]");
+
+  const SORT_KEY = "gilaKanaSort";
+  const COLLECTION_KEY = "gilaKanaCollection";
+
+  const defaultSort = "newest";
+  const defaultCollection = "all";
+
+  function getSort() {
+    return sessionStorage.getItem(SORT_KEY) || defaultSort;
+  }
+
+  function getCollection() {
+    return sessionStorage.getItem(COLLECTION_KEY) || defaultCollection;
+  }
+
+  function applySortFilter() {
+    if (!worksGrid) return;
+    const sort = getSort();
+    const collection = getCollection();
+    const cards = Array.from(worksGrid.querySelectorAll("[data-overlay-card]"));
+
+    cards.forEach((card) => {
+      const inCollection =
+        collection === "all" || (card.dataset.collections || "").split(",").includes(collection);
+      card.hidden = !inCollection;
+    });
+
+    const visible = cards.filter((c) => !c.hidden);
+    visible.sort((a, b) => {
+      const diff = Number(a.dataset.order) - Number(b.dataset.order);
+      return sort === "newest" ? diff : -diff;
+    });
+    visible.forEach((c) => worksGrid.appendChild(c));
+  }
+
+  if (sortTrigger && sortDropdown) {
+    sortTrigger.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const open = sortTrigger.getAttribute("aria-expanded") === "true";
+      if (open) {
+        closeSort();
+      } else {
+        openSort();
+      }
+    });
+
+    sortDropdown.addEventListener("click", (event) => {
+      const btn = event.target.closest("[data-sort], [data-collection]");
+      if (!btn) return;
+      if (btn.hasAttribute("data-sort")) {
+        sessionStorage.setItem(SORT_KEY, btn.dataset.sort);
+        sortDropdown.querySelectorAll("[data-sort]").forEach((o) => o.classList.remove("is-active"));
+        btn.classList.add("is-active");
+      } else {
+        sessionStorage.setItem(COLLECTION_KEY, btn.dataset.collection);
+        sortDropdown.querySelectorAll("[data-collection]").forEach((o) => o.classList.remove("is-active"));
+        btn.classList.add("is-active");
+      }
+      applySortFilter();
+      closeSort();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (sortControls && !sortControls.contains(event.target)) {
+        closeSort();
+      }
+    });
+  }
+
+  function openSort() {
+    sortDropdown.hidden = false;
+    sortTrigger.setAttribute("aria-expanded", "true");
+  }
+
+  function closeSort() {
+    sortDropdown.hidden = true;
+    sortTrigger.setAttribute("aria-expanded", "false");
+  }
+
+  function initSortUI() {
+    if (!sortTrigger) return;
+    const sort = getSort();
+    const collection = getCollection();
+    sortDropdown.querySelectorAll("[data-sort]").forEach((o) => {
+      o.classList.toggle("is-active", o.dataset.sort === sort);
+    });
+    sortDropdown.querySelectorAll("[data-collection]").forEach((o) => {
+      o.classList.toggle("is-active", o.dataset.collection === collection);
+    });
+  }
+
+  initSortUI();
+  applySortFilter();
+
+  const signatureBanner = document.getElementById("signature-banner");
+  if (signatureBanner && signatureBanner.classList.contains("signature-banner--home")) {
+    const isHome = true;
+    window.addEventListener("scroll", () => {
+      if (!isHome) return;
+      if (window.scrollY > signatureBanner.offsetTop) {
+        signatureBanner.classList.add("is-compact");
+      } else {
+        signatureBanner.classList.remove("is-compact");
+      }
+    }, { passive: true });
+  }
+
+  const carouselTrack = document.querySelector("[data-carousel-track]");
+  if (carouselTrack) {
+    const artworks = [
+      { id: "divine-couple-conception", order: 1, title: "Divine Couple: Conception - A Place Where Dreams Are Born", img: "assets/images/divine-couple-conception-thumb.jpg", url: "divine-couple-conception.html", blurb: "The woman holds a lily in her hands while the man declares his love for her. The first in a series inspired by Greek signet rings" },
+      { id: "divine-couple-crossing", order: 2, title: "Divine Couple: Crossing - The Path Unfolds", img: "assets/images/divine-couple-crossing-thumb.jpg", url: "divine-couple-crossing.html", blurb: "The Divine Couple are shown at the point of crossing the river in a boat, surrounded by petals, flowers and gold paint" },
+      { id: "107-butterfly-effect", order: 3, title: "107 Butterfly Effect", img: "assets/images/107-butterfly-effect-thumb.jpg", url: "107-butterfly-effect.html", blurb: "This piece explores moments of manifestation, from the repeated appearance of the number 107 to butterflies and painted clouds" },
+      { id: "el-encuentro", order: 4, title: "El Encuentro", img: "assets/images/el-encuentro-thumb.jpg", url: "el-encuentro.html", blurb: "El Encuentro is a mind game: chaotic at first glance, then ordered through closer inspection" }
+    ];
+
+    const currentId = carouselTrack.dataset.current;
+    const sort = getSort();
+    let others = artworks
+      .filter((a) => a.id !== currentId)
+      .sort((a, b) => (sort === "newest" ? a.order - b.order : b.order - a.order));
+
+    others.forEach((art) => {
+      const card = document.createElement("article");
+      card.className = "carousel-card";
+      card.setAttribute("data-overlay-card", "");
+      card.innerHTML =
+        '<a class="work-media" tabindex="0" href="' + art.url + '" aria-label="View ' + art.title + '">' +
+        '<img src="' + art.img + '" alt="' + art.title + '" loading="lazy">' +
+        '<div class="work-overlay"><div class="work-overlay-text"><p><strong>About the work:</strong><br>' + art.blurb + ' &#8230;</p></div></div>' +
+        '</a>' +
+        '<h3>' + art.title + '</h3>';
+      carouselTrack.appendChild(card);
+    });
+
+    const prevBtn = document.querySelector("[data-carousel-prev]");
+    const nextBtn = document.querySelector("[data-carousel-next]");
+    const card = carouselTrack.querySelector(".carousel-card");
+    const step = () => {
+      const cardWidth = card ? card.getBoundingClientRect().width + 20 : 300;
+      return cardWidth;
+    };
+
+    function scrollByCards(dir) {
+      const amount = step();
+      carouselTrack.scrollBy({ left: dir * amount, behavior: "smooth" });
+    }
+
+    if (prevBtn) prevBtn.addEventListener("click", () => scrollByCards(-1));
+    if (nextBtn) nextBtn.addEventListener("click", () => scrollByCards(1));
+
+    function loopCheck() {
+      if (!carouselTrack) return;
+      const maxScroll = carouselTrack.scrollWidth - carouselTrack.clientWidth;
+      if (carouselTrack.scrollLeft <= 0) {
+        carouselTrack.scrollTo({ left: maxScroll, behavior: "auto" });
+      } else if (carouselTrack.scrollLeft >= maxScroll - 1) {
+        carouselTrack.scrollTo({ left: 0, behavior: "auto" });
+      }
+    }
+
+    carouselTrack.addEventListener("scroll", () => {
+      const maxScroll = carouselTrack.scrollWidth - carouselTrack.clientWidth;
+      if (carouselTrack.scrollLeft <= 4 || carouselTrack.scrollLeft >= maxScroll - 4) {
+        loopCheck();
+      }
+    }, { passive: true });
+  }
 
   const lightbox = document.querySelector("[data-lightbox]");
   const lightboxImage = document.querySelector("[data-lightbox-image]");

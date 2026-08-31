@@ -7,22 +7,14 @@
     <meta name="description" content="Divine Couple: Conception - A Place Where Dreams Are Born by Gila Kana.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;400&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;400;700&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <div class="site-menu-overlay" data-menu-overlay hidden>
-      <nav class="site-menu" id="site-menu" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="recent-works.html">Recent works</a>
-      </nav>
-    </div>
+    <nav class="top-nav" aria-label="Primary navigation">
+      <a href="about.html" class="top-nav-link">About</a>
+      <a href="index.html" class="top-nav-link is-active" aria-current="page">Recent Works</a>
+    </nav>
 
     <header class="signature-banner signature-banner--compact">
       <img src="assets/images/signature.png" alt="Gila Kana signature">
@@ -47,11 +39,19 @@
             <p>The woman holds a lily in her hands while the man declares his love for her - is he singing or comparing her beauty to that of the sky?</p>
             <p>The first in a series of paintings inspired by Greek signet rings and my first painting to experiment with dried flowers. The &lsquo;Divine Couple Ring&rsquo; served as inspiration for this piece.</p>
             <p>In the background on the left lies an ancient burial mound of the Ukrainian steppes, and on the right stands the Chimborazo mountain of Ecuador. A river and sunflowers push the two worlds together, uniting their dreams.</p>
-            <p>Set at dawn, yet shining with bright colours, I like to think of it as an evening painting.</p>
           </div>
         </div>
       </article>
     </main>
+
+    <section class="explore-other-works" aria-labelledby="explore-heading">
+      <h2 id="explore-heading">Explore other works</h2>
+      <div class="carousel">
+        <button class="carousel-arrow" type="button" data-carousel-prev aria-label="Previous artworks">&#10094;</button>
+        <div class="carousel-track" data-carousel-track data-current="divine-couple-conception"></div>
+        <button class="carousel-arrow" type="button" data-carousel-next aria-label="Next artworks">&#10095;</button>
+      </div>
+    </section>
 
     <footer class="site-footer">
       <div class="footer-inner">

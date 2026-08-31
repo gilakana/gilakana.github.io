@@ -7,22 +7,14 @@
     <meta name="description" content="107 Butterfly Effect by Gila Kana.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;400&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;400;700&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <div class="site-menu-overlay" data-menu-overlay hidden>
-      <nav class="site-menu" id="site-menu" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="recent-works.html">Recent works</a>
-      </nav>
-    </div>
+    <nav class="top-nav" aria-label="Primary navigation">
+      <a href="about.html" class="top-nav-link">About</a>
+      <a href="index.html" class="top-nav-link is-active" aria-current="page">Recent Works</a>
+    </nav>
 
     <header class="signature-banner signature-banner--compact">
       <img src="assets/images/signature.png" alt="Gila Kana signature">
@@ -51,6 +43,15 @@
         </div>
       </article>
     </main>
+
+    <section class="explore-other-works" aria-labelledby="explore-heading">
+      <h2 id="explore-heading">Explore other works</h2>
+      <div class="carousel">
+        <button class="carousel-arrow" type="button" data-carousel-prev aria-label="Previous artworks">&#10094;</button>
+        <div class="carousel-track" data-carousel-track data-current="107-butterfly-effect"></div>
+        <button class="carousel-arrow" type="button" data-carousel-next aria-label="Next artworks">&#10095;</button>
+      </div>
+    </section>
 
     <footer class="site-footer">
       <div class="footer-inner">
