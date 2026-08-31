@@ -169,10 +169,30 @@
   const signatureBanner = document.getElementById("signature-banner");
   if (signatureBanner && signatureBanner.classList.contains("signature-banner--home")) {
     const sigInner = signatureBanner.querySelector(".sig-inner");
-    if (sigInner) {
-      sigInner.style.opacity = "1";
-      sigInner.style.transform = "translateY(0)";
+    const sigImg = signatureBanner.querySelector("img");
+
+    function updateHeader() {
+      const viewportH = window.innerHeight;
+      const scrollProgress = Math.min(1, window.scrollY / Math.max(180, viewportH * 0.45));
+      const baseMinHeight = window.innerWidth <= 620 ? 74 : 120;
+      const maxMinHeight = window.innerWidth <= 620 ? 120 : 180;
+      const nextMinHeight = Math.max(baseMinHeight, maxMinHeight - scrollProgress * (maxMinHeight - baseMinHeight));
+
+      signatureBanner.style.minHeight = `${nextMinHeight}px`;
+
+      if (sigInner) {
+        sigInner.style.transform = `translateY(${scrollProgress * 6}px)`;
+      }
+
+      if (sigImg) {
+        const targetHeight = window.innerWidth <= 620 ? 54 : 90;
+        sigImg.style.maxHeight = `${Math.max(targetHeight, 120 - scrollProgress * 36)}px`;
+      }
     }
+
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    window.addEventListener("resize", updateHeader);
   }
 
   const carouselTrack = document.querySelector("[data-carousel-track]");
@@ -207,13 +227,15 @@
     const nextBtn = document.querySelector("[data-carousel-next]");
     const card = carouselTrack.querySelector(".carousel-card");
     const step = () => {
-      const cardWidth = card ? card.getBoundingClientRect().width + 20 : 300;
+      const gap = parseFloat(getComputedStyle(carouselTrack).gap) || 32;
+      const cardWidth = card ? card.getBoundingClientRect().width + gap : 300;
       return cardWidth;
     };
 
     function scrollByCards(dir) {
       const amount = step();
-      carouselTrack.scrollBy({ left: dir * amount, behavior: "smooth" });
+      const targetLeft = carouselTrack.scrollLeft + dir * amount;
+      carouselTrack.scrollTo({ left: targetLeft, behavior: "smooth" });
     }
 
     if (prevBtn) prevBtn.addEventListener("click", () => scrollByCards(-1));
