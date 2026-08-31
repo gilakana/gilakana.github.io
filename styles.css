@@ -61,10 +61,21 @@ a {
   color: inherit;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.22em;
+  outline-offset: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid #6B4E7A;
+  border-radius: 2px;
 }
 
 button {
   font: inherit;
+  outline-offset: 3px;
+}
+
+button:focus-visible {
+  outline: 2px solid #6B4E7A;
 }
 
 .top-nav {
@@ -131,7 +142,7 @@ button {
   background: currentColor;
   transform: scaleX(0);
   transform-origin: center;
-  transition: transform 220ms ease;
+  transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .top-nav-link:hover,
@@ -325,7 +336,7 @@ main {
 .fade-up {
   opacity: 0;
   transform: translateY(30px) scale(0.98);
-  transition: opacity 760ms cubic-bezier(0.22, 1, 0.36, 1), transform 760ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1), transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.is-visible,
@@ -621,7 +632,12 @@ main {
 .work-media:focus-visible,
 .work-card.is-open .work-media {
   transform: translateY(-2px);
-  box-shadow: 0 20px 34px rgba(2, 6, 18, 0.28), inset 0 0 0 1px rgba(255,255,255,0.08);
+  box-shadow: 0 20px 34px rgba(2, 6, 18, 0.28), inset 0 0 0 1px rgba(25, 21, 18, 0.12);
+}
+
+.work-media:focus-visible {
+  outline: 2px solid #6B4E7A;
+  outline-offset: 2px;
 }
 
 .work-media:hover::before,
@@ -729,7 +745,12 @@ main {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: var(--shadow-soft);
-  transition: transform 260ms ease, background 260ms ease, box-shadow 260ms ease;
+  transition: transform 260ms cubic-bezier(0.34, 1.56, 0.64, 1), background 260ms ease, box-shadow 260ms ease;
+}
+
+.artwork-lightbox-trigger:focus-visible {
+  outline: 2px solid #6B4E7A;
+  outline-offset: 3px;
 }
 
 .artwork-lightbox-trigger:hover,
@@ -855,7 +876,14 @@ main {
 
 .footer-links a {
   text-decoration: none;
-  transition: opacity 180ms ease, transform 180ms ease;
+  transition: opacity 160ms ease, transform 160ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: inline-block;
+}
+
+.footer-links a:focus-visible {
+  outline: 2px solid #6B4E7A;
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 .footer-links a:hover,
@@ -955,7 +983,12 @@ main {
   cursor: pointer;
   flex-shrink: 0;
   border-radius: 50%;
-  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+  transition: transform 180ms cubic-bezier(0.34, 1.56, 0.64, 1), background 180ms ease, border-color 180ms ease;
+}
+
+.carousel-arrow:focus-visible {
+  outline: 2px solid #6B4E7A;
+  outline-offset: 2px;
 }
 
 .carousel-arrow:hover,
@@ -1092,7 +1125,7 @@ main {
 
 @media (max-width: 900px) {
   .carousel-card {
-    flex: 0 0 100%;
+    flex: 0 0 calc(100% - 44px);
   }
 
   .carousel-card .work-media img {
@@ -1101,10 +1134,12 @@ main {
 
   .works-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(24px, 3vw, 34px) clamp(18px, 2vw, 28px);
   }
 
   .artwork-layout {
     grid-template-columns: 1fr;
+    gap: clamp(32px, 5vw, 48px);
   }
 
   .artwork-copy {
@@ -1114,62 +1149,104 @@ main {
 
 @media (max-width: 620px) {
   .top-nav {
-    padding: 12px 18px;
+    padding: 12px 16px;
+    gap: 18px;
   }
 
   .brand-mark {
-    min-width: 100px;
-    height: 34px;
+    min-width: 90px;
+    height: 38px;
   }
 
   .brand-signature {
-    height: 22px;
+    height: 24px;
   }
 
   .nav-links {
-    gap: 16px;
+    gap: 18px;
   }
 
   .top-nav-link {
     font-size: 14px;
+    padding: 8px 0;
   }
 
-  .signature-banner--home {
-    min-height: 8vh;
-    padding: 10px 16px;
+  .carousel-arrow {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
   }
 
-  .signature-banner--home .sig-inner {
-    width: min(100%, 420px);
-    min-height: 56px;
-    padding: 8px 14px;
-    border-radius: 10px;
+  .carousel-track {
+    gap: clamp(14px, 2vw, 20px);
   }
 
-  .signature-banner--home img {
-    max-height: 7vh;
+  .carousel-card {
+    flex: 0 0 calc(100% - 32px);
   }
 
-  .home-intro {
-    padding-top: 30px;
+  .work-card {
+    transition: transform 200ms ease, filter 200ms ease, opacity 200ms ease;
   }
 
-  .artist-statement {
-    margin-top: 22px;
-    padding: 18px 16px;
-    border-radius: 18px;
+  .work-card:active {
+    transform: scale(0.98);
   }
 
-  .signature-banner--compact {
-    min-height: 12px;
+  .artwork-lightbox-trigger {
+    border-radius: 16px;
+  }
+
+  .artwork-lightbox-trigger:active {
+    transform: translateY(-2px);
+  }
+
+  .artwork-meta {
+    padding: clamp(14px, 2vw, 18px);
+    border-radius: 12px;
+    font-size: 13px;
+  }
+
+  .artwork-copy {
+    padding: clamp(14px, 2vw, 18px);
+    border-radius: 16px;
+  }
+
+  .artwork-copy h2 {
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+
+  .lightbox-close {
+    width: 40px;
+    height: 40px;
+    font-size: 26px;
+    top: 14px;
+    right: 14px;
+  }
+
+  .lightbox-controls button {
+    min-width: 48px;
+    min-height: 48px;
+    font-size: 18px;
   }
 
   .works-grid {
     grid-template-columns: 1fr;
+    gap: clamp(20px, 2.5vw, 28px);
+  }
+
+  .work-overlay-text {
+    width: 85%;
+    max-width: 85%;
   }
 
   .work-overlay p {
-    font-size: 16px;
+    font-size: clamp(13px, 1.3vw, 15px);
+  }
+
+  .signature-banner--compact {
+    min-height: 12px;
   }
 
   .footer-links {
@@ -1186,9 +1263,9 @@ main {
   *,
   *::before,
   *::after {
-    animation-duration: 1ms !important;
+    animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 1ms !important;
+    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 
