@@ -1,5 +1,40 @@
 (function () {
   const body = document.body;
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function revealOnIntersection() {
+    const targets = document.querySelectorAll(
+      ".home-intro h1, .home-subheading, .artist-statement p, .work-card, .artwork-detail, .artwork-copy, .artwork-meta, .explore-other-works, .site-footer .footer-inner, .top-nav-link"
+    );
+
+    if (!targets.length) return;
+
+    targets.forEach((target, index) => {
+      target.classList.add("reveal");
+      target.style.transitionDelay = prefersReducedMotion ? "0ms" : `${Math.min(index * 80, 300)}ms`;
+    });
+
+    if (!("IntersectionObserver" in window)) {
+      targets.forEach((target) => target.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
+    );
+
+    targets.forEach((target) => observer.observe(target));
+  }
+
+  revealOnIntersection();
 
   document.querySelectorAll("[data-overlay-card]").forEach((card) => {
     const media = card.querySelector(".work-media");
@@ -134,62 +169,9 @@
   const signatureBanner = document.getElementById("signature-banner");
   if (signatureBanner && signatureBanner.classList.contains("signature-banner--home")) {
     const sigInner = signatureBanner.querySelector(".sig-inner");
-    const sigImg = signatureBanner.querySelector("img");
-
-    function updateSignature() {
-      const isMobile = window.innerWidth <= 620;
-      const viewportH = window.innerHeight;
-      const startPct = isMobile ? 100 : 40;
-      const endPct = isMobile ? 80 : 12.5;
-      const travel = viewportH * (isMobile ? 0.5 : 0.6);
-      const progress = Math.min(1, Math.max(0, window.scrollY / travel));
-
-      const h = startPct + (endPct - startPct) * progress;
-      const bannerH = h / 100 * viewportH;
-      signatureBanner.style.minHeight = bannerH + "px";
-
-      if (!sigInner || !sigImg) return;
-      const travelY = -14 * progress;
-      sigImg.style.maxHeight = (bannerH * 0.78) + "px";
-      sigInner.style.transform = "translateY(" + travelY + "%)";
-      sigInner.style.justifyContent = progress >= 0.5 ? "flex-start" : "center";
-      sigInner.style.opacity = String(1);
-    }
-
-    updateSignature();
-    window.addEventListener("scroll", updateSignature, { passive: true });
-    window.addEventListener("resize", updateSignature);
-  }
-
-  const homeIntro = document.querySelector(".home-intro");
-  if (homeIntro) {
-    const fadeTargets = homeIntro.querySelectorAll("h1, .home-subheading, .artist-statement p");
-    fadeTargets.forEach((el) => el.classList.add("fade-up"));
-
-    function revealOnScroll() {
-      const viewportBottom = window.innerHeight;
-      fadeTargets.forEach((el) => {
-        if (el.classList.contains("is-visible")) return;
-        const rect = el.getBoundingClientRect();
-        if (rect.top < viewportBottom * 0.92) {
-          el.classList.add("is-visible");
-        }
-      });
-    }
-
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: "0px 0px -5% 0px" });
-      fadeTargets.forEach((el) => observer.observe(el));
-    } else {
-      revealOnScroll();
-      window.addEventListener("scroll", revealOnScroll, { passive: true });
+    if (sigInner) {
+      sigInner.style.opacity = "1";
+      sigInner.style.transform = "translateY(0)";
     }
   }
 
