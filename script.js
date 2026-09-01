@@ -221,30 +221,30 @@
     };
 
     function scrollByCards(dir) {
+      if (!carouselTrack) return;
       const amount = step();
-      const targetLeft = carouselTrack.scrollLeft + dir * amount;
-      carouselTrack.scrollTo({ left: targetLeft, behavior: "smooth" });
+      const maxScroll = carouselTrack.scrollWidth - carouselTrack.clientWidth;
+
+      if (dir > 0) {
+        const targetLeft = carouselTrack.scrollLeft + amount;
+        if (targetLeft >= maxScroll) {
+          const backAmount = Math.max(0, maxScroll - carouselTrack.scrollLeft);
+          carouselTrack.scrollTo({ left: 0, behavior: backAmount > 0 ? "smooth" : "auto" });
+        } else {
+          carouselTrack.scrollTo({ left: targetLeft, behavior: "smooth" });
+        }
+      } else {
+        const targetLeft = carouselTrack.scrollLeft - amount;
+        if (targetLeft <= 0) {
+          carouselTrack.scrollTo({ left: maxScroll, behavior: "smooth" });
+        } else {
+          carouselTrack.scrollTo({ left: targetLeft, behavior: "smooth" });
+        }
+      }
     }
 
     if (prevBtn) prevBtn.addEventListener("click", () => scrollByCards(-1));
     if (nextBtn) nextBtn.addEventListener("click", () => scrollByCards(1));
-
-    function loopCheck() {
-      if (!carouselTrack) return;
-      const maxScroll = carouselTrack.scrollWidth - carouselTrack.clientWidth;
-      if (carouselTrack.scrollLeft <= 0) {
-        carouselTrack.scrollTo({ left: maxScroll, behavior: "auto" });
-      } else if (carouselTrack.scrollLeft >= maxScroll - 1) {
-        carouselTrack.scrollTo({ left: 0, behavior: "auto" });
-      }
-    }
-
-    carouselTrack.addEventListener("scroll", () => {
-      const maxScroll = carouselTrack.scrollWidth - carouselTrack.clientWidth;
-      if (carouselTrack.scrollLeft <= 4 || carouselTrack.scrollLeft >= maxScroll - 4) {
-        loopCheck();
-      }
-    }, { passive: true });
   }
 
   const lightbox = document.querySelector("[data-lightbox]");
