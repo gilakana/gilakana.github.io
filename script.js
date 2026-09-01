@@ -213,33 +213,28 @@
 
     const prevBtn = document.querySelector("[data-carousel-prev]");
     const nextBtn = document.querySelector("[data-carousel-next]");
-    const card = carouselTrack.querySelector(".carousel-card");
-    const step = () => {
-      const gap = parseFloat(getComputedStyle(carouselTrack).gap) || 32;
-      const cardWidth = card ? card.getBoundingClientRect().width + gap : 300;
-      return cardWidth;
-    };
+
+    function cardStep() {
+      const first = carouselTrack.querySelector(".carousel-card");
+      const gap = parseFloat(getComputedStyle(carouselTrack).gap) || 0;
+      if (!first) return { cardWidth: 0, gap };
+      return { cardWidth: first.getBoundingClientRect().width, gap };
+    }
 
     function scrollByCards(dir) {
-      if (!carouselTrack) return;
-      const amount = step();
+      const { cardWidth, gap } = cardStep();
+      if (cardWidth <= 0) return;
       const maxScroll = carouselTrack.scrollWidth - carouselTrack.clientWidth;
+      const amount = cardWidth + gap;
+      const rawTarget = carouselTrack.scrollLeft + dir * amount;
+      const targetLeft = Math.min(Math.max(rawTarget, 0), maxScroll);
 
-      if (dir > 0) {
-        const targetLeft = carouselTrack.scrollLeft + amount;
-        if (targetLeft >= maxScroll) {
-          const backAmount = Math.max(0, maxScroll - carouselTrack.scrollLeft);
-          carouselTrack.scrollTo({ left: 0, behavior: backAmount > 0 ? "smooth" : "auto" });
-        } else {
-          carouselTrack.scrollTo({ left: targetLeft, behavior: "smooth" });
-        }
+      if (dir > 0 && rawTarget >= maxScroll) {
+        carouselTrack.scrollTo({ left: 0, behavior: "smooth" });
+      } else if (dir < 0 && rawTarget <= 0) {
+        carouselTrack.scrollTo({ left: maxScroll, behavior: "smooth" });
       } else {
-        const targetLeft = carouselTrack.scrollLeft - amount;
-        if (targetLeft <= 0) {
-          carouselTrack.scrollTo({ left: maxScroll, behavior: "smooth" });
-        } else {
-          carouselTrack.scrollTo({ left: targetLeft, behavior: "smooth" });
-        }
+        carouselTrack.scrollTo({ left: targetLeft, behavior: "smooth" });
       }
     }
 
