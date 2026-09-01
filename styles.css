@@ -555,6 +555,19 @@ main {
   color: var(--text);
 }
 
+.works-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: -24px 0 28px;
+}
+
+@media (max-width: 620px) {
+  .works-toolbar {
+    margin: -16px 0 24px;
+  }
+}
+
 .artwork-detail h1 {
   margin: 0 0 clamp(36px, 5vw, 58px);
   font-size: 27px;

@@ -28,7 +28,27 @@
     <main>
       <section class="recent-works" aria-labelledby="recent-heading">
         <h1 id="recent-heading">Recent Works</h1>
-        
+        <p class="home-note">Botanical forms, memory, and ritual in motion.</p>
+
+        <div class="works-toolbar">
+          <div class="sort-controls" data-sort-controls>
+            <button class="sort-trigger" type="button" data-sort-trigger aria-haspopup="true" aria-expanded="false">
+              Filter &amp; sort <span class="sort-arrow" aria-hidden="true">&#9662;</span>
+            </button>
+            <div class="sort-dropdown" data-sort-dropdown hidden>
+              <div class="sort-group">
+                <span class="sort-group-label">Sort by</span>
+                <button type="button" class="sort-option" data-sort="newest">Newest</button>
+                <button type="button" class="sort-option" data-sort="oldest">Oldest</button>
+              </div>
+              <div class="sort-group">
+                <span class="sort-group-label">Filter collection</span>
+                <button type="button" class="sort-option" data-collection="all">All works</button>
+                <button type="button" class="sort-option" data-collection="divine-couple">Divine Couple series</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div class="works-grid" data-works-grid>
           <article class="work-card" data-overlay-card data-order="1" data-collections="divine-couple">
